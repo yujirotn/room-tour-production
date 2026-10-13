@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "room-tour-production",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "寸法入り住宅図面からBlenderモデル、室内歩行と建具開閉ができる3D内覧を制作・検証する。",
   "author": {
     "name": "AITM Company"

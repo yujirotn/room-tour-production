@@ -24,3 +24,9 @@
 - [esbuild: Additional npm flags](https://esbuild.github.io/getting-started/#additional-npm-flags): 固定依存は`npm ci --ignore-scripts`で導入し、optional dependenciesを省略しない。`node_modules`を異なるOS・CPU・Windows/WSL間で流用しない。
 
 具体的な診断と不足ソフトの導入は[初期設定](setup.md)に従う。診断成功とWindows実機での生成・操作検証は区別する。
+
+## 任意のBlender MCP接続
+
+- [Blender公式: MCP Server](https://www.blender.org/lab/mcp-server/): Blender5.1以降・アドオン・LLMクライアント・MCPサーバーの構成。Blender内蔵機能ではない。公式ページからアドオンとサーバーの配布先を辿り、LLM生成コード実行に関する注意を確認する。
+
+具体的な導入方法と公式配布リンクは[Blender MCPの接続手順](blender-mcp.md)へ。接続を依頼された場合だけ設定し、通常のCLI生成の依存へ追加しない。手順保存済みと実接続確認済みを区別する。

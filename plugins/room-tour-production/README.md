@@ -8,6 +8,8 @@ Codexの制作スキルとローカル生成処理を同梱したプラグイン
 
 runtimeを作業用フォルダへコピーし、macOS/Linuxは`npm ci --ignore-scripts`、Windowsは`npm.cmd ci --ignore-scripts`で依存を導入します。`node scripts/doctor.mjs --json`で診断後、テストと架空サンプル生成へ進みます。WindowsのBlenderは`--blender`指定を使用してください。詳細は[実行方法](skills/room-tour-production/references/runtime.md)を参照。Windows実機での生成・操作は未検証です。
 
-[v1.1.0のプラグインZIPとデモ](https://github.com/yujirotn/room-tour-production/releases/tag/v1.1.0) / 顧客図面・メーカー部品は同梱していません。
+[Blender MCPの接続手順](skills/room-tour-production/references/blender-mcp.md)も同梱しています。AIへ「Blender MCPの接続も設定して」と依頼した場合に、公式アドオン・LLMクライアント・MCPサーバーを設定します。通常のCLI生成には不要で、この配布物で接続は有効化していません。実接続は未検証です。
+
+[v1.1.1のプラグインZIPとデモ](https://github.com/yujirotn/room-tour-production/releases/tag/v1.1.1) / 顧客図面・メーカー部品は同梱していません。
 
 [公開リポジトリと導入方法](https://github.com/yujirotn/room-tour-production) / [MIT](LICENSE) / [第三者ライセンス](runtime/THIRD-PARTY-NOTICES.md)

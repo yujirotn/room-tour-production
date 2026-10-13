@@ -19,15 +19,17 @@ PCを操作できない場合は、必要な公式ダウンロードリンクと
 
 AI向けの入口は[AGENTS.md](AGENTS.md)、不足ソフトの案内と診断は[初期設定](plugins/room-tour-production/skills/room-tour-production/references/setup.md)です。URLを添付するだけで、すべてのAIがPC操作や指示ファイルの読み込みを行えるわけではありません。上の依頼文を添えてください。
 
+BlenderのシーンをAIから直接編集する接続も必要なら、依頼文に「Blender MCPの接続も設定して」を追加してください。通常のモデル生成にはMCP接続は必要ありません。
+
 木目・タイルの画像材質、金属・ガラス、面取り、巾木・枠・金具、家具・設備を生成します。描画はThree.jsのPBR材質、環境反射、昼光と室内照明。保存形式は`.blend`、`.glb`、依存を埋め込んだ単一HTMLです。インターネットへ顧客図面を送る処理はありません。
 
 ![架空住宅のブラウザ3D内覧](docs/demo/browser-overview.png)
 
-[プラグインZIPと生成済みデモ](https://github.com/yujirotn/room-tour-production/releases/tag/v1.1.0)をダウンロードできます。**完成HTMLを閲覧するだけなら、Node.js・Blender・Git・Codexは不要です。** HTMLをブラウザで開いて操作してください。
+[プラグインZIPと生成済みデモ](https://github.com/yujirotn/room-tour-production/releases/tag/v1.1.1)をダウンロードできます。**完成HTMLを閲覧するだけなら、Node.js・Blender・Git・Codexは不要です。** HTMLをブラウザで開いて操作してください。
 
 ## インストール
 
-新規生成にはNode.js22以降・npm・Blender5.1系が必要です。PythonはBlender内蔵版を使うため、別途導入は不要です。Codexはプラグインとして使う場合、GitはcloneまたはGitHub marketplaceの取得に使う場合に用意します。ZIPを展開してruntimeを実行する方法もあります。
+新規生成にはNode.js22以降・npm・Blender5.1系が必要です。通常のCLI生成はBlender内蔵Pythonを使うため、別途Pythonの導入は不要です。MCPサーバー用の依存は接続手順で確認します。Codexはプラグインとして使う場合、GitはcloneまたはGitHub marketplaceの取得に使う場合に用意します。ZIPを展開してruntimeを実行する方法もあります。
 
 不足ソフトは[初期設定の公式リンク](plugins/room-tour-production/skills/room-tour-production/references/setup.md)から導入し、診断で検証してください。診断スクリプト自体はダウンロードやOS設定変更を行いません。
 
@@ -62,6 +64,12 @@ node scripts/build.mjs --plan examples/demo-plan.json --out output/my-demo --ble
 
 `--render`はCyclesの静止画も生成します。既存HTMLがある出力先は上書きせず停止します。実案件は入力JSONを案件フォルダに置き、顧客成果物をこの公開リポジトリへ保存しないでください。
 
+## Blender MCPの接続（任意）
+
+[Blender公式MCP Server](https://www.blender.org/lab/mcp-server/)に基づく[接続手順](plugins/room-tour-production/skills/room-tour-production/references/blender-mcp.md)を保存しています。Blender5.1以降に加え、公式アドオン・LLMクライアント・MCPサーバーが必要です。Blenderに内蔵された接続機能ではありません。
+
+接続を依頼されたときだけ、最新の公式資料とコード実行に関する注意を確認して設定します。今回の変更では接続を有効化しておらず、実接続は未検証です。通常のCLI生成、完成HTMLの歩行・建具開閉には影響しません。
+
 ## 操作
 
 - 「室内を歩く」で歩行開始。WASD・矢印キーで移動、ドラッグで視線、Escで全体表示へ戻る。
@@ -79,6 +87,7 @@ PDFの認識はCodexが図面を読んで入力JSONを作る工程です。PDF�
 
 - [制作スキル](plugins/room-tour-production/skills/room-tour-production/SKILL.md)
 - [初期設定と公式ダウンロード](plugins/room-tour-production/skills/room-tour-production/references/setup.md)
+- [Blender MCPの接続手順](plugins/room-tour-production/skills/room-tour-production/references/blender-mcp.md)
 - [入力仕様](plugins/room-tour-production/skills/room-tour-production/references/input.md)
 - [実行方法](plugins/room-tour-production/skills/room-tour-production/references/runtime.md)
 - [品質チェック](plugins/room-tour-production/skills/room-tour-production/references/quality.md)

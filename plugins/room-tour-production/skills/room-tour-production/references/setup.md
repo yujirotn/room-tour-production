@@ -11,7 +11,13 @@
 | GitHubをclone / marketplaceで取得 | Git。ZIP展開でruntimeを使う場合は不要 |
 | Codexプラグインとして利用 | プラグイン対応Codex環境。runtime単独実行には不要 |
 
-PythonはBlender内蔵版を使用する。別途Pythonを導入しない。
+通常のCLI生成ではBlender内蔵Pythonを使用し、別途Pythonの導入は不要。任意のMCPサーバー用Pythonは下の接続手順で確認する。
+
+## Blender MCPを使う場合だけ
+
+BlenderシーンをAIから直接操作するための任意の接続。[Blender公式MCP資料](https://www.blender.org/lab/mcp-server/)に基づく[接続手順](blender-mcp.md)を読む。Blender5.1以降に加え、公式アドオン・LLMクライアント・MCPサーバーが必要で、通常のCLI生成の必須依存には含めない。MCPサーバーの導入方法ごとの依存は接続手順で確認する。
+
+ユーザーが接続を依頼した場合だけ、最新の公式資料とLLM生成コード実行に関する注意を確認し、既存の承認・ホストの権限に従って設定する。接続方法の保存・説明だけでは導入や設定を行わない。PC操作できないAIは公式リンクと使用クライアント向けの手順を案内する。実接続は未検証。
 
 ## AIが進める順序
 
