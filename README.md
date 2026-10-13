@@ -2,15 +2,34 @@
 
 寸法入りの住宅平面図をCodexで読み取り、Blenderの編集可能モデルと、室内を歩きながら建具を開閉できるブラウザ3D内覧を作るプラグインです。
 
+## GitHubのURLをAIへ渡して始める
+
+このリポジトリのURLと図面を、PCのファイル・端末を操作できるAIに渡し、次を依頼してください。
+
+```text
+https://github.com/yujirotn/room-tour-production
+このリポジトリを使って、このPCの初期設定をして。
+README.md、AGENTS.md、制作スキルと公式ドキュメントを読んで、OSと不足ソフトを確認し、
+必要なものを公式配布元から導入して、環境診断とサンプル生成を検証して。
+その後、添付図面を正確に読み、高品質な3Dモデルを作って。
+室内を歩けること、建具を開閉できること、原図照合と実ブラウザでの操作確認まで完成条件にして。
+既存のソフトが使える場合は再利用し、図面にない仕様は補完根拠を記録して。
+PCを操作できない場合は、必要な公式ダウンロードリンクと、このOSでの導入手順を示して。
+```
+
+AI向けの入口は[AGENTS.md](AGENTS.md)、不足ソフトの案内と診断は[初期設定](plugins/room-tour-production/skills/room-tour-production/references/setup.md)です。URLを添付するだけで、すべてのAIがPC操作や指示ファイルの読み込みを行えるわけではありません。上の依頼文を添えてください。
+
 木目・タイルの画像材質、金属・ガラス、面取り、巾木・枠・金具、家具・設備を生成します。描画はThree.jsのPBR材質、環境反射、昼光と室内照明。保存形式は`.blend`、`.glb`、依存を埋め込んだ単一HTMLです。インターネットへ顧客図面を送る処理はありません。
 
 ![架空住宅のブラウザ3D内覧](docs/demo/browser-overview.png)
 
-[プラグインZIPと生成済みデモ](https://github.com/yujirotn/room-tour-production/releases/tag/v1.0.0)から、Blender生成を行わずにデモHTMLの操作も確認できます。
+[プラグインZIPと生成済みデモ](https://github.com/yujirotn/room-tour-production/releases/tag/v1.1.0)をダウンロードできます。**完成HTMLを閲覧するだけなら、Node.js・Blender・Git・Codexは不要です。** HTMLをブラウザで開いて操作してください。
 
 ## インストール
 
-Node.js22以降とBlender5.1系を用意してください。Codexプラグインを読み込めるローカル実行環境が必要です。
+新規生成にはNode.js22以降・npm・Blender5.1系が必要です。PythonはBlender内蔵版を使うため、別途導入は不要です。Codexはプラグインとして使う場合、GitはcloneまたはGitHub marketplaceの取得に使う場合に用意します。ZIPを展開してruntimeを実行する方法もあります。
+
+不足ソフトは[初期設定の公式リンク](plugins/room-tour-production/skills/room-tour-production/references/setup.md)から導入し、診断で検証してください。診断スクリプト自体はダウンロードやOS設定変更を行いません。
 
 ```bash
 codex plugin marketplace add yujirotn/room-tour-production --ref main
@@ -32,6 +51,8 @@ npm ci --ignore-scripts
 npm test
 npm run demo
 ```
+
+上はmacOS/Linuxの例です。Windows PowerShellでは`npm`を`npm.cmd`へ置き換え、Blender実行ファイルを`--blender`で指定します。[OS別の診断・生成コマンド](plugins/room-tour-production/skills/room-tour-production/references/setup.md)を参照してください。WSLではNode/npmとBlenderを同じWSL実行環境に揃えます。Windows実機での生成・操作は未検証です。
 
 `output/demo/walkthrough.html`をブラウザで開きます。Blenderを自動検出できない場合は`BLENDER_BIN`または`--blender`で実行ファイルを指定します。
 
@@ -57,6 +78,7 @@ PDFの認識はCodexが図面を読んで入力JSONを作る工程です。PDF�
 サンプルは新規作成した架空住宅です。顧客図面・顧客モデル・private部品は含みません。サンプルの成功は実案件の正確性を示しません。各案件で図面照合、全室の歩行、全建具の開閉、材質・照明を最終ブラウザで検証します。
 
 - [制作スキル](plugins/room-tour-production/skills/room-tour-production/SKILL.md)
+- [初期設定と公式ダウンロード](plugins/room-tour-production/skills/room-tour-production/references/setup.md)
 - [入力仕様](plugins/room-tour-production/skills/room-tour-production/references/input.md)
 - [実行方法](plugins/room-tour-production/skills/room-tour-production/references/runtime.md)
 - [品質チェック](plugins/room-tour-production/skills/room-tour-production/references/quality.md)

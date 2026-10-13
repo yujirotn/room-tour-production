@@ -1,6 +1,6 @@
 {
   "name": "room-tour-production",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "寸法入り住宅図面からBlenderモデル、室内歩行と建具開閉ができる3D内覧を制作・検証する。",
   "author": {
     "name": "AITM Company"
@@ -13,7 +13,7 @@
     "developerName": "AITM Company",
     "category": "Productivity",
     "capabilities": [],
-    "defaultPrompt": "この寸法入り平面図を読み取り、高品質な3Dモデルを作って。室内歩行と建具開閉を実装し、原図との照合とブラウザ操作を検証して。",
+    "defaultPrompt": "必要なソフトの有無を確認し、不足しているものの公式ダウンロード・導入を案内してから、この寸法入り平面図を読み取り、高品質な3Dモデルを作って。室内歩行と建具開閉を実装し、原図との照合とブラウザ操作を検証して。",
     "logo": "./assets/icon.svg",
     "composerIcon": "./assets/icon.svg"
   },

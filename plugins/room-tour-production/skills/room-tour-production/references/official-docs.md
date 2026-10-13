@@ -12,3 +12,15 @@
 - [Three.js r179 GLTFLoader](https://github.com/mrdoob/three.js/blob/r179/docs/examples/en/loaders/GLTFLoader.html): GLBモデル、PBR材質、extrasの読み込み。
 
 公式資料はAPIの根拠であり、個別図面の正確性・最終描画品質を保証するものではない。図面照合、材質比較、実際の歩行・開閉の記録を別に残す。
+
+## 初期設定の公式資料
+
+- [OpenAI: AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md): repoルートへの指示配置。初期設定はユーザーが利用・導入を依頼したときに限り、ホストの権限を優先する。
+- [OpenAI: Codex CLI](https://developers.openai.com/codex/cli/): プラグイン用の導入とサインイン。runtime単独実行やHTML閲覧にはCodexを要求しない。
+- [Node.js Download](https://nodejs.org/en/download): OS・CPUに合う22以降のLTSとnpmを案内する。
+- [Blender Installing](https://docs.blender.org/manual/en/5.1/getting_started/installing/index.html)、[Windows](https://docs.blender.org/manual/en/5.1/getting_started/installing/windows.html)、[macOS](https://docs.blender.org/manual/en/5.1/getting_started/installing/macos.html): 5.1系の公式配布とOS別導入手順。macOSはIntel/Apple Siliconを区別する。
+- [Git Downloads](https://git-scm.com/downloads/): clone/marketplace取得時だけ導入方法を案内する。
+- [Microsoft: WinGet install](https://learn.microsoft.com/en-us/windows/package-manager/winget/install): OSの診断とインストールを区別し、版を指定せず最新Blenderを導入しない。自動同意フラグを診断に混ぜない。
+- [esbuild: Additional npm flags](https://esbuild.github.io/getting-started/#additional-npm-flags): 固定依存は`npm ci --ignore-scripts`で導入し、optional dependenciesを省略しない。`node_modules`を異なるOS・CPU・Windows/WSL間で流用しない。
+
+具体的な診断と不足ソフトの導入は[初期設定](setup.md)に従う。診断成功とWindows実機での生成・操作検証は区別する。
