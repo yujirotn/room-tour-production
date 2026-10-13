@@ -1,0 +1,10 @@
+{
+  "name": "aitm-room-tour",
+  "interface": { "displayName": "住宅ルームツアー" },
+  "plugins": [{
+    "name": "room-tour-production",
+    "source": { "source": "local", "path": "./plugins/room-tour-production" },
+    "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+    "category": "Productivity"
+  }]
+}

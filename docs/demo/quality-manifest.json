@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0",
+  "builderVersion": "1.0.0",
+  "blenderVersion": "5.1.2",
+  "units": "m",
+  "files": {
+    "blend": "model.blend",
+    "glb": "model.glb",
+    "preview": "preview.png"
+  },
+  "meshCount": 413,
+  "triangles": 77624,
+  "meshRoles": {
+    "floor": 8,
+    "ceiling": 2,
+    "wall": 55,
+    "trim": 140,
+    "window": 12,
+    "door": 40,
+    "fixture": 123,
+    "stair": 33
+  },
+  "materialCount": 13,
+  "embeddedProceduralImages": 4,
+  "stairOpenings": [
+    {
+      "floorId": "ground",
+      "floor": [],
+      "ceiling": [
+        [
+          6.5,
+          1.0499999999999998,
+          7.800000000000001,
+          5.85
+        ]
+      ]
+    },
+    {
+      "floorId": "upper",
+      "floor": [
+        [
+          6.5,
+          1.0499999999999998,
+          7.800000000000001,
+          5.85
+        ]
+      ],
+      "ceiling": []
+    }
+  ],
+  "movableOpeningIds": [
+    "door-bath",
+    "door-bedroom",
+    "door-living",
+    "door-stair"
+  ],
+  "quality": {
+    "bevelSegments": 3,
+    "pbr": true,
+    "physicalUvScale": true,
+    "separateJoineryParts": true,
+    "measuredOpenings": true
+  },
+  "render": {
+    "engine": "CYCLES",
+    "samples": 96,
+    "adaptiveThreshold": 0.015,
+    "denoiser": "OPENIMAGEDENOISE",
+    "generated": true
+  },
+  "sourceDocumentation": [
+    "https://docs.blender.org/manual/en/latest/addons/scene_gltf2.html",
+    "https://docs.blender.org/manual/en/latest/render/cycles/render_settings/sampling.html"
+  ],
+  "assumptions": [
+    "検証用に新規作成した架空の間取り。実在する住宅の転用ではない。",
+    "天井高2.4m、階高2.9m、室内木目・設備はサンプル仕様。"
+  ],
+  "limitations": [
+    "Reference finishes and generic fixtures; no manufacturer dimensions.",
+    "Only orthogonal plans, straight stairs, hinged/sliding doors and fixed windows.",
+    "No roof, landscaping or exterior objects are inferred from a floor plan."
+  ]
+}

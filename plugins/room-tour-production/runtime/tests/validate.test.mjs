@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {validatePlan} from '../scripts/validate.mjs';
+const original=JSON.parse(fs.readFileSync(new URL('../examples/demo-plan.json',import.meta.url),'utf8'));
+test('架空2階住宅は入力検証を通る',()=>assert.deepEqual(validatePlan(original),[]));
+test('壁の外へ出る開口を停止',()=>{const p=structuredClone(original);p.floors[0].walls[4].openings[0].offset=20;assert.match(validatePlan(p).join(),/開口寸法/);});
+test('図面の斜め壁を無断で近似しない',()=>{const p=structuredClone(original);p.floors[0].walls[4].end=[4,7];assert.match(validatePlan(p).join(),/直交壁/);});
+test('開閉方向と未対応窓を推測しない',()=>{const p=structuredClone(original);delete p.floors[0].walls[4].openings[0].swing;p.floors[0].walls[0].openings[0].operation='sliding';assert.match(validatePlan(p).join(),/swing/);assert.match(validatePlan(p).join(),/可動窓/);});
+test('階のない階段・極端な蹴上を停止',()=>{const p=structuredClone(original);p.stairs[0].steps=4;assert.match(validatePlan(p).join(),/蹴上/);p.stairs[0].toFloor='missing';assert.match(validatePlan(p).join(),/参照/);});
+test('同じIDの建具を停止',()=>{const p=structuredClone(original);p.floors[1].walls[4].openings[0].id='door-living';assert.match(validatePlan(p).join(),/idの重複/);});
+test('部屋外の開始位置を停止',()=>{const p=structuredClone(original);p.floors[0].rooms[0].position=[9,9];assert.match(validatePlan(p).join(),/position/);});
+test('自己接触する床境界を停止',()=>{const p=structuredClone(original);p.floors[0].boundary=[[0,0],[8,0],[8,7],[4,7],[4,0],[3,0],[3,7],[0,7]];assert.match(validatePlan(p).join(),/自己交差・接触/);});
+test('凹型境界外を横切る壁を停止',()=>{const p=structuredClone(original);p.floors[0].boundary=[[0,0],[8,0],[8,2],[2,2],[2,5],[8,5],[8,7],[0,7]];p.floors[0].walls.push({id:'outside-crossing',start:[4,1],end:[4,6],thickness:.1});assert.match(validatePlan(p).join(),/outside-crossing: 壁が床境界外/);});
+test('設備や階段の全幅が境界外なら停止',()=>{const p=structuredClone(original);p.floors[0].fixtures[0].size[0]=30;p.stairs[0].width=30;assert.match(validatePlan(p).join(),/設備が床境界外/);assert.match(validatePlan(p).join(),/階段の幅/);});

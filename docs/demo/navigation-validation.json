@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "meshCount": 413,
+  "materialCount": 13,
+  "imageCount": 4,
+  "roles": {
+    "floor": 8,
+    "ceiling": 2,
+    "wall": 55,
+    "trim": 140,
+    "window": 12,
+    "door": 40,
+    "fixture": 123,
+    "stair": 33
+  },
+  "doors": {
+    "door-living": 11,
+    "door-stair": 9,
+    "door-bedroom": 11,
+    "door-bath": 9
+  },
+  "errors": [],
+  "rooms": [
+    {
+      "id": "hall",
+      "passed": true
+    },
+    {
+      "id": "living",
+      "passed": true
+    },
+    {
+      "id": "stairs-ground",
+      "passed": true
+    },
+    {
+      "id": "bedroom",
+      "passed": true
+    },
+    {
+      "id": "washroom",
+      "passed": true
+    },
+    {
+      "id": "upper-hall",
+      "passed": true
+    }
+  ],
+  "stairs": [
+    {
+      "id": "stair-main",
+      "passed": true
+    }
+  ],
+  "obstacleCount": 334
+}

@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-14",
+  "browser": "Chrome",
+  "rooms": [
+    {
+      "name": "玄関ホール",
+      "view": "玄関ホール / 歩行",
+      "feedback": ""
+    },
+    {
+      "name": "LDK",
+      "view": "LDK / 歩行",
+      "feedback": ""
+    },
+    {
+      "name": "階段前",
+      "view": "階段前 / 歩行",
+      "feedback": ""
+    },
+    {
+      "name": "寝室",
+      "view": "寝室 / 歩行",
+      "feedback": ""
+    },
+    {
+      "name": "洗面・浴室",
+      "view": "洗面・浴室 / 歩行",
+      "feedback": ""
+    },
+    {
+      "name": "2階ホール",
+      "view": "2階ホール / 歩行",
+      "feedback": ""
+    }
+  ],
+  "doors": [
+    {
+      "name": "LDK 開き戸",
+      "opened": "LDK 開き戸：開",
+      "closed": "LDK 開き戸：閉"
+    },
+    {
+      "name": "階段前 引戸",
+      "opened": "階段前 引戸：開",
+      "closed": "階段前 引戸：閉"
+    },
+    {
+      "name": "寝室 開き戸",
+      "opened": "寝室 開き戸：開",
+      "closed": "寝室 開き戸：閉"
+    },
+    {
+      "name": "洗面室 引戸",
+      "opened": "洗面室 引戸：開",
+      "closed": "洗面室 引戸：閉"
+    }
+  ],
+  "closedStop": "1階 · X 2.82 m / Z 3.40 m · 目線 1.85 m",
+  "openPassage": "1階 · X 3.10 m / Z 3.40 m · 目線 1.85 m",
+  "stairTop": "2階 · X 7.15 m / Z 0.24 m · 目線 4.75 m",
+  "stairBottom": "1階 · X 7.15 m / Z 6.75 m · 目線 1.85 m",
+  "bodyGuard": {
+    "feedback": "LDK 開き戸の動く範囲から離れてください。",
+    "sidebar": "LDK 開き戸：途中で停止",
+    "nearby": "LDK 開き戸：途中で停止 / E で開閉"
+  },
+  "controls": {
+    "wasd": true,
+    "dragLook": true,
+    "eKey": true,
+    "canvasDoorClick": true,
+    "doorList": true,
+    "floorSwitch": true
+  }
+}

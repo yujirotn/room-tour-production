@@ -1,0 +1,13 @@
+**/node_modules/
+**/__pycache__/
+**/*.pyc
+**/output/
+**/.DS_Store
+private/
+*.zip
+*.blend1
+*.pdf
+*.dxf
+*.dwg
+.env*
+
